@@ -1,4 +1,9 @@
 .primary_button {
   padding: 5 10;
-  background-color: rgb(194, 244, 227);
+  background-color: rgb(178, 79, 224);
+  color: white;
+  &:hover {
+    background-color: rgba(178, 79, 224, 0.8);
+    color: white;
+  }
 }
