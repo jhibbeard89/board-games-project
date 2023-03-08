@@ -4,9 +4,8 @@
 
 <div id="boardgames">
   <% @boardgames.each do |boardgame| %>
-    <%= render boardgame %>
     <p>
-      <%= link_to "Show this boardgame", boardgame %>
+      <%= link_to(boardgame.name, boardgame_path(boardgame)) %>
     </p>
   <% end %>
 </div>
