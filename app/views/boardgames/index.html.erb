@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Boardgames</h1>
+
+<div id="boardgames">
+  <% @boardgames.each do |boardgame| %>
+    <p>
+      <%= link_to(boardgame.name, boardgame_path(boardgame)) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New boardgame", new_boardgame_path %>

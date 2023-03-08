@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @boardgame %>
+
+<div>
+  <% if policy(@boardgame).edit? %>
+    <%= link_to "Edit this boardgame", edit_boardgame_path(@boardgame) %> |
+  <% end %>
+  <%= link_to "Back to boardgames", boardgames_path %>
+  <%# if policy(@boardgame).destroy? %>
+    <%= button_to "Destroy this boardgame", @boardgame, method: :delete if policy(@boardgame).destroy? %>
+  <%# end %>
+</div>
