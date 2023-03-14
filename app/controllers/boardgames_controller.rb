@@ -5,6 +5,15 @@ class BoardgamesController < ApplicationController
   def index
     # @boardgames = Boardgame.all
     @boardgames = policy_scope(Boardgame)
+
+    @markers = @boardgames.geocoded.map do |boardgame|
+      {
+        lat: boardgame.latitude,
+        lng: boardgame.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { boardgame: boardgame }),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   # GET /boardgames/1
